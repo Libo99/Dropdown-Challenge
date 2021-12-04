@@ -10,7 +10,7 @@ interface CardProps {
 const Card = (({ onClick, item }) => {
   return (
     <div className={styles.container} onClick={onClick}>
-      <div className={styles.card}>
+      <div className={item.isSelected ? styles.selectedCard : styles.card}>
         <img src={item.image} alt="Avatar" height={30} width={30} />
         <p className={styles.itemName}>{item.name}</p>
       </div>
