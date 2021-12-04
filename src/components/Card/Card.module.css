@@ -1,0 +1,30 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  color: #9fa2b4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+  border-radius: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 33px;
+  font-weight: 400;
+}
+
+.card:hover {
+  background: #99cc98;
+  color: white;
+  font-weight: 600;
+}
+
+.card:active {
+  background: #339933;
+}
+

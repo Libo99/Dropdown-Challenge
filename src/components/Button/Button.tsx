@@ -2,15 +2,23 @@ import React from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
-  title: string;
-  onClick: () => void;
+  title?: string;
+  onClick: (e?: any) => void;
+  children?: React.ReactNode;
+  menuButton?: boolean;
+  value?: string;
+  icon?: JSX.Element;
 }
 
-const Button = (({ title, onClick }) => {
+const Button = (({ title, onClick, children, menuButton, value }) => {
   return (
     <div>
-      <button onClick={onClick} className={styles.button}>
-        {title}
+      <button
+        value={value}
+        onClick={onClick}
+        className={menuButton ? styles.menuButton : styles.button}
+      >
+        {title || children}
       </button>
     </div>
   );

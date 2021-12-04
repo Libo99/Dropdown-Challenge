@@ -1,25 +1,22 @@
-export const data = [
-  {
-    category: 'Users',
-    isSelected: false,
-    item: [
-      { name: 'Louie Popp', isSelected: false },
-      { name: 'Jonas Rafn', isSelected: false },
-      { name: 'Fiona Rakipi', isSelected: false },
-      { name: 'Martin Navne', isSelected: false },
-      { name: 'Kristoffer Degn', isSelected: false },
-    ],
-  },
+import Avatar from '../assets/Avatar.png';
+export const integrations = {
+  isSelected: false,
+  item: [
+    { id: 1, image: Avatar, name: 'ActiveCampaign', isSelected: false },
+    { id: 2, image: Avatar, name: 'Google Analytics', isSelected: false },
+    { id: 3, image: Avatar, name: 'Instagram', isSelected: false },
+    { id: 4, image: Avatar, name: 'Woocommerce', isSelected: false },
+    { id: 5, image: Avatar, name: 'Shopify', isSelected: false },
+  ],
+};
 
-  {
-    category: 'Integrations',
-    isSelected: false,
-    item: [
-      { name: 'ActiveCampaign', isSelected: false },
-      { name: 'Google Analytics', isSelected: false },
-      { name: 'Instagram', isSelected: false },
-      { name: 'Woocommerce', isSelected: false },
-      { name: 'Shopify', isSelected: false },
-    ],
-  },
-];
+export const users = {
+  isSelected: false,
+  item: [
+    { id: 1, image: Avatar, name: 'Louie Popp', isSelected: false },
+    { id: 2, image: Avatar, name: 'Jonas Rafn', isSelected: false },
+    { id: 3, image: Avatar, name: 'Fiona Rakipi', isSelected: false },
+    { id: 4, image: Avatar, name: 'Martin Navne', isSelected: false },
+    { id: 5, image: Avatar, name: 'Kristoffer Degn', isSelected: false },
+  ],
+};

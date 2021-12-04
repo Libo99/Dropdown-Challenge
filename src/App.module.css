@@ -2,26 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 72vh;
   width: 100%;
   flex-direction: column;
 }
 
+/* To keep the button in place */
 .buttonContainer {
   width: 340px;
   justify-content: flex-start;
 }
 
-/* To make sure the dropdown doesn't push the button up */
+/* Position Absolute to make sure the dropdown doesn't push the button up */
 .dropdownContainer {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.droptop {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
+  position: absolute;
+  top: 40%;
 }

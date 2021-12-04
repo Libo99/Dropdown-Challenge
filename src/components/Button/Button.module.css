@@ -1,8 +1,30 @@
-.button{
-    height: 40px;
-    width: 118px;
-    border: 1.2px solid #339933;
-    border-radius: 5px;
-    background-color: white;
-    color: #339933;
+.button {
+  height: 40px;
+  width: 118px;
+  border: 1.2px solid #339933;
+  border-radius: 5px;
+  background-color: white;
+  color: #339933;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+.menuButton {
+  border: none;
+  background-color: white;
+  font-size: 14px;
+}
+
+.menuButton:focus {
+  color: #65b366;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.menuButton:hover {
+  color: #4ea64c;
+  font-weight: 400;
 }
