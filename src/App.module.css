@@ -18,3 +18,8 @@
   position: absolute;
   top: 40%;
 }
+
+.tagContainer {
+  display: flex;
+  flex-direction: row;
+}

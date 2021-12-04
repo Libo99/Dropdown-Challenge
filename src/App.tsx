@@ -8,6 +8,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import { useEffect } from 'react';
 import { MenuItem } from './types/Data';
 import { BiPlus, BiSearch } from 'react-icons/bi';
+import Tag from './components/Tag/Tag';
 
 const App = (() => {
   const [showMenu, setShowMenu] = useState(false);
@@ -19,6 +20,7 @@ const App = (() => {
     integrations.item
   );
   const [selectedItem, setSelectedItem] = useState<MenuItem[]>([]);
+
   //this function toggles between which data to show
   const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === 'users') {
@@ -29,10 +31,6 @@ const App = (() => {
       setShowUsers(false);
     }
   };
-
-  useEffect(() => {
-    console.log(filterUser);
-  });
 
   useEffect(() => {
     const result: any = users.item.filter((item) =>
@@ -49,14 +47,40 @@ const App = (() => {
   }, [search, showIntegrations]);
 
   const renderUser = () => {
-    return filterUser.map((item) => (
-      <Card item={item} onClick={() => {}} key={item.id} />
+    return filterUser.map((item: MenuItem) => (
+      <Card item={item} onClick={() => addItem(item)} key={item.id} />
     ));
   };
+
   const renderIntegration = () => {
-    return filterIntegration.map((item) => (
-      <Card item={item} onClick={() => {}} key={item.id} />
+    return filterIntegration.map((item: MenuItem) => (
+      <Card
+        item={item}
+        onClick={() => {
+          addItem(item);
+        }}
+        key={item.id}
+      />
     ));
+  };
+
+  useEffect(() => {
+    const existingItems = localStorage.getItem('tag');
+    setSelectedItem(existingItems ? JSON.parse(existingItems) : []);
+  }, []);
+
+  const addItem = (item: MenuItem) => {
+    item.isSelected = true;
+    const next = [...selectedItem, item];
+    setSelectedItem(next);
+    localStorage.setItem('tag', JSON.stringify(next));
+  };
+
+  const removeItem = (index: number) => {
+    const items = [...selectedItem];
+    items.splice(index, 1);
+    setSelectedItem(items);
+    localStorage.setItem('tag', JSON.stringify(items));
   };
 
   return (
@@ -68,8 +92,8 @@ const App = (() => {
       </div>
       <div className={styles.dropdownContainer}>
         {showMenu && (
-          <Dropdown visible={showMenu} onClick={toggle}>
-            <>
+          <>
+            <Dropdown visible={showMenu} onClick={toggle}>
               <SearchBar
                 icon={
                   <BiSearch
@@ -83,8 +107,12 @@ const App = (() => {
                 placeHolder="Search Options"
               />
               {showUsers ? renderUser() : renderIntegration()}
-            </>
-          </Dropdown>
+            </Dropdown>
+
+            {selectedItem.map((item, index) => (
+              <Tag key={index} onClick={() => removeItem(index)} item={item} />
+            ))}
+          </>
         )}
       </div>
     </div>

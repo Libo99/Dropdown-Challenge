@@ -8,15 +8,22 @@ interface ButtonProps {
   menuButton?: boolean;
   value?: string;
   icon?: JSX.Element;
+  tag?: boolean;
 }
 
-const Button = (({ title, onClick, children, menuButton, value }) => {
+const Button = (({ title, onClick, children, menuButton, value, tag }) => {
   return (
     <div>
       <button
         value={value}
         onClick={onClick}
-        className={menuButton ? styles.menuButton : styles.button}
+        className={
+          menuButton
+            ? styles.menuButton
+            : tag
+            ? styles.tagButton
+            : styles.button
+        }
       >
         {title || children}
       </button>

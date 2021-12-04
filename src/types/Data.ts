@@ -1,4 +1,5 @@
 export interface Data {
+  category: string;
   item: MenuItem[];
   isSelected: boolean;
 }

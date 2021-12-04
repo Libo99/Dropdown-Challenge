@@ -28,3 +28,10 @@
   color: #4ea64c;
   font-weight: 400;
 }
+
+.tagButton {
+  background-color: #f1f5f5;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+}
