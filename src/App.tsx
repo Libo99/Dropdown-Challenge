@@ -92,8 +92,8 @@ const App = (() => {
       </div>
       <div className={styles.dropdownContainer}>
         {showMenu && (
-          <>
-            <Dropdown data={data} onClick={toggle}>
+          <Dropdown data={data} onClick={toggle}>
+            <div className={styles.searchBarContainer}>
               <SearchBar
                 icon={
                   <BiSearch
@@ -106,9 +106,9 @@ const App = (() => {
                 onChange={(e) => setSearch(e.target.value)}
                 placeHolder="Search Options"
               />
-              {showUsers ? renderUser() : renderIntegration()}
-            </Dropdown>
-          </>
+            </div>
+            {showUsers ? renderUser() : renderIntegration()}
+          </Dropdown>
         )}
       </div>
       {showMenu && (

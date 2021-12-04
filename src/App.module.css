@@ -27,3 +27,8 @@
   bottom: 8%;
   justify-content: center;
 }
+
+/* Need this to make sure the search icon doesnt move when typing */
+.searchBarContainer {
+  position: relative;
+}
