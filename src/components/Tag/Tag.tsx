@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Tag.module.css';
 import { MenuItem } from '../../types/Data';
 import Button from '../Button/Button';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 interface TagProps {
   item: MenuItem;
@@ -11,7 +12,17 @@ interface TagProps {
 const Tag = (({ item, onClick }) => {
   return (
     <div className={styles.container}>
-      <Button tag title={`${item.name}`} onClick={onClick} />
+      <Button tag onClick={onClick}>
+        {item.name}
+        <AiOutlineCloseCircle
+          style={{
+            height: 15,
+            width: 15,
+            color: ' #9FB4B4',
+            paddingTop: '2px',
+          }}
+        />
+      </Button>
     </div>
   );
 }) as React.FC<TagProps>;
