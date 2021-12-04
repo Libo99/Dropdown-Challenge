@@ -6,6 +6,7 @@
   border-radius: 5px;
   width: 340px;
   height: 100%;
+  position: relative;
 }
 
 .droptop {
@@ -18,7 +19,3 @@
   width: 100%;
   padding-left: 5px;
 }
-
-
-
-
