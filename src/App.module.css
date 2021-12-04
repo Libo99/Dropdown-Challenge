@@ -22,4 +22,8 @@
 .tagContainer {
   display: flex;
   flex-direction: row;
+  position: absolute;
+  width: 100%;
+  bottom: 8%;
+  justify-content: center;
 }

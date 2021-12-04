@@ -108,13 +108,16 @@ const App = (() => {
               />
               {showUsers ? renderUser() : renderIntegration()}
             </Dropdown>
-
-            {selectedItem.map((item, index) => (
-              <Tag key={index} onClick={() => removeItem(index)} item={item} />
-            ))}
           </>
         )}
       </div>
+      {showMenu && (
+        <div className={styles.tagContainer}>
+          {selectedItem.map((item, index) => (
+            <Tag key={index} onClick={() => removeItem(index)} item={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }) as React.FC;
