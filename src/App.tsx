@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './App.module.css';
 import Button from './components/Button/Button';
 import Dropdown from './components/Dropdown/Dropdown';
-import { users, integrations } from './Data/data';
+import { users, integrations, data } from './Data/data';
 import Card from './components/Card/Card';
 import SearchBar from './components/SearchBar/SearchBar';
 import { useEffect } from 'react';
@@ -23,10 +23,10 @@ const App = (() => {
 
   //this function toggles between which data to show
   const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === 'users') {
+    if (e.target.value === 'Users') {
       setShowUsers(true);
       setShowIntegrations(false);
-    } else if (e.target.value === 'integrations') {
+    } else if (e.target.value === 'Integrations') {
       setShowIntegrations(true);
       setShowUsers(false);
     }
@@ -93,7 +93,7 @@ const App = (() => {
       <div className={styles.dropdownContainer}>
         {showMenu && (
           <>
-            <Dropdown visible={showMenu} onClick={toggle}>
+            <Dropdown data={data} onClick={toggle}>
               <SearchBar
                 icon={
                   <BiSearch

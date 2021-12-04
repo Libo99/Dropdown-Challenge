@@ -1,7 +1,6 @@
 import Avatar from '../assets/Avatar.png';
 export const integrations = {
   category: 'Integrations',
-  isSelected: false,
   item: [
     { id: 1, image: Avatar, name: 'ActiveCampaign', isSelected: false },
     { id: 2, image: Avatar, name: 'Google Analytics', isSelected: false },
@@ -13,7 +12,6 @@ export const integrations = {
 
 export const users = {
   category: 'Users',
-  isSelected: false,
   item: [
     { id: 1, image: Avatar, name: 'Louie Popp', isSelected: false },
     { id: 2, image: Avatar, name: 'Jonas Rafn', isSelected: false },
@@ -22,3 +20,5 @@ export const users = {
     { id: 5, image: Avatar, name: 'Kristoffer Degn', isSelected: false },
   ],
 };
+
+export const data = [users, integrations];

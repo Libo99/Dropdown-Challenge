@@ -5,22 +5,22 @@ import Button from '../Button/Button';
 
 interface DropDownProps {
   data?: Data[];
-  visible?: boolean;
   children?: React.ReactNode;
   onClick: (e: any) => void;
 }
 
-const Dropdown = (({ children, onClick }) => {
+const Dropdown = (({ data, children, onClick }) => {
   return (
     <div className={styles.container}>
       <div className={styles.droptop}>
-        <Button value="users" onClick={onClick} title="Users" menuButton />
-        <Button
-          menuButton
-          value="integrations"
-          onClick={onClick}
-          title="Integrations"
-        />
+        {data?.map((item) => (
+          <Button
+            value={item.category}
+            onClick={onClick}
+            title={item.category}
+            menuButton
+          />
+        ))}
       </div>
       <div className={styles.itemsContainer}>{children}</div>
     </div>
