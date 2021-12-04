@@ -1,5 +1,6 @@
 .container {
-    height: 286px;
-    width: 340px;
-    background-color: red;
+  width: 340px;
+  position: absolute;
+  border-radius: 5px;
+  display: flex;
 }

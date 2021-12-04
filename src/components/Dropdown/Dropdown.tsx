@@ -3,18 +3,15 @@ import styles from './Dropdown.module.css';
 import { Data } from '../../types/Data';
 
 interface DropDownProps {
-  data: Data[];
-  visible: boolean;
+  data?: Data[];
+  visible?: boolean;
+  children: React.ReactNode;
 }
 
-const Dropdown = (({ data, visible }) => {
+const Dropdown = (({  children }) => {
   return (
     <div className={styles.container}>
-      {data.map((item) => (
-        <div>
-          <h1>{item.category}</h1>
-        </div>
-      ))}
+      {children}
     </div>
   );
 }) as React.FC<DropDownProps>;

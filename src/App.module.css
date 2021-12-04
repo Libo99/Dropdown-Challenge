@@ -6,3 +6,22 @@
   width: 100%;
   flex-direction: column;
 }
+
+.buttonContainer {
+  width: 340px;
+  justify-content: flex-start;
+}
+
+/* To make sure the dropdown doesn't push the button up */
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.droptop {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
