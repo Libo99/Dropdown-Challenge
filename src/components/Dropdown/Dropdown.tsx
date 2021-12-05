@@ -6,8 +6,7 @@ import Button from '../Button/Button';
 interface DropDownProps {
   data?: Data[];
   children?: React.ReactNode;
-  onClick: (e: any) => void;
-  
+  onClick: (e?: any) => void;
 }
 
 const Dropdown = (({ data, children, onClick }) => {

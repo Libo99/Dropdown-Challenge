@@ -35,7 +35,7 @@
 .selected::after {
   content: '';
   width: 100%;
-  border: solid 1px green;
+  border: 1.3px solid #65b366;
   position: absolute;
   top: 24.5px;
   z-index: 1;
