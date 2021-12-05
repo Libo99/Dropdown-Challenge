@@ -27,11 +27,11 @@
   flex-direction: row;
   position: absolute;
   width: 100%;
-  bottom: 10%;
+  bottom: 3%;
   height: 100px;
   justify-content: center;
   flex-wrap: wrap;
-  width: 70%;
+  width: 75%;
 }
 
 /* Need this to make sure the search icon doesnt move when typing */
