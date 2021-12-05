@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 7px;
 }
 .card {
   color: #9fa2b4;
