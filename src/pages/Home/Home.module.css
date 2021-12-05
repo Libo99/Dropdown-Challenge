@@ -2,15 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 72vh;
+  height: 100vh;
   width: 100%;
   flex-direction: column;
 }
 
-/* To keep the button in place */
+/* To keep the button in place a bit left to the center */
 .buttonContainer {
   width: 340px;
   justify-content: flex-start;
+  margin-top: -200px;
 }
 
 /* Position Absolute to make sure the dropdown doesn't push the button up */
@@ -19,15 +20,18 @@
   top: 40%;
 }
 
-/* Position absolute to make sure the tag container doesn't mess 
+/* Position absolute to make sure the tag container doesn't 
   appear in front of the button */
 .tagContainer {
   display: flex;
   flex-direction: row;
   position: absolute;
   width: 100%;
-  bottom: 8%;
+  bottom: 0%;
+  height: 100px;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
 }
 
 /* Need this to make sure the search icon doesnt move when typing */

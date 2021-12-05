@@ -9,4 +9,5 @@ export interface MenuItem {
   name: string;
   isSelected: boolean;
   image: any;
+  type: string;
 }

@@ -13,7 +13,7 @@ const Tag = (({ item, onClick }) => {
   return (
     <div className={styles.container}>
       <Button tag onClick={onClick}>
-        {item.name}
+        {item.type}: {item.name}
         <AiOutlineCloseCircle
           style={{
             height: 15,
