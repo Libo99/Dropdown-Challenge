@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* To keep the button in place a bit left to the center */
@@ -17,7 +18,7 @@
 /* Position Absolute to make sure the dropdown doesn't push the button up */
 .dropdownContainer {
   position: absolute;
-  top: 33%;
+  top: 36%;
 }
 
 /* Position absolute to make sure the tag container doesn't 
@@ -27,7 +28,7 @@
   flex-direction: row;
   position: absolute;
   width: 100%;
-  bottom: 3%;
+  bottom: 1%;
   height: 100px;
   justify-content: center;
   flex-wrap: wrap;
