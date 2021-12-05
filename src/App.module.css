@@ -1,34 +1,4 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 72vh;
+.container{
+  height: 100%;
   width: 100%;
-  flex-direction: column;
-}
-
-/* To keep the button in place */
-.buttonContainer {
-  width: 340px;
-  justify-content: flex-start;
-}
-
-/* Position Absolute to make sure the dropdown doesn't push the button up */
-.dropdownContainer {
-  position: absolute;
-  top: 40%;
-}
-
-.tagContainer {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  width: 100%;
-  bottom: 8%;
-  justify-content: center;
-}
-
-/* Need this to make sure the search icon doesnt move when typing */
-.searchBarContainer {
-  position: relative;
 }
