@@ -14,13 +14,15 @@
   box-sizing: border-box;
   border-radius: 5px;
   padding-left: 40px;
-  color: #9fb4b4;
+  color: black;
   transition: 200ms ease-in;
 }
 .input::placeholder {
   font-size: 14px;
   font-family: 'Times New Roman', Times, serif;
   line-height: 16px;
+  color: #9fb4b4;
+
 }
 
 .input:focus {
