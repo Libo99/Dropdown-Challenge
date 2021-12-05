@@ -21,17 +21,6 @@ const App = (() => {
   );
   const [selectedItem, setSelectedItem] = useState<MenuItem[]>([]);
 
-  //this function toggles between which data to show
-  const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === 'Users') {
-      setShowUsers(true);
-      setShowIntegrations(false);
-    } else if (e.target.value === 'Integrations') {
-      setShowIntegrations(true);
-      setShowUsers(false);
-    }
-  };
-
   // Search function for the users
   useEffect(() => {
     const result: any = users.item.filter((item) =>
@@ -47,6 +36,22 @@ const App = (() => {
     );
     setFilterIntegration(result);
   }, [search, showIntegrations]);
+
+  //this function toggles between which data to show
+  useEffect(() => {
+    const existingItems = localStorage.getItem('tag');
+    setSelectedItem(existingItems ? JSON.parse(existingItems) : []);
+  }, []);
+  
+  const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === 'Users') {
+      setShowUsers(true);
+      setShowIntegrations(false);
+    } else if (e.target.value === 'Integrations') {
+      setShowIntegrations(true);
+      setShowUsers(false);
+    }
+  };
 
   const renderUser = () => {
     return filterUser.map((item: MenuItem) => (
@@ -65,11 +70,6 @@ const App = (() => {
       />
     ));
   };
-
-  useEffect(() => {
-    const existingItems = localStorage.getItem('tag');
-    setSelectedItem(existingItems ? JSON.parse(existingItems) : []);
-  }, []);
 
   const addItem = (item: MenuItem) => {
     item.isSelected = true;
