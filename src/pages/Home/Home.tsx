@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Home.module.css';
 import Button from '../../components/Button/Button';
 import Dropdown from '../../components/Dropdown/Dropdown';
-import { users, integrations, data } from '../../data/data';
+import { users, integrations, data } from '../../Data/data';
 import Card from '../../components/Card/Card';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import { useEffect } from 'react';
