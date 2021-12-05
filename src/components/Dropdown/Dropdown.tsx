@@ -7,6 +7,7 @@ interface DropDownProps {
   data?: Data[];
   children?: React.ReactNode;
   onClick: (e: any) => void;
+  
 }
 
 const Dropdown = (({ data, children, onClick }) => {
@@ -19,6 +20,7 @@ const Dropdown = (({ data, children, onClick }) => {
             onClick={onClick}
             title={item.category}
             menuButton
+            selected={item.isSelected}
           />
         ))}
       </div>

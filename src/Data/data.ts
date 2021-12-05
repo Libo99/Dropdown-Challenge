@@ -42,7 +42,7 @@ export const integrations = {
 
 export const users = {
   category: 'Users',
-  isSelected: false,
+  isSelected: true,
   item: [
     { id: 1, image: Avatar, name: 'Louie Popp', isSelected: false },
     { id: 2, image: Avatar, name: 'Jonas Rafn', isSelected: false },

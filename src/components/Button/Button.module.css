@@ -24,6 +24,15 @@
   text-decoration: underline;
   font-weight: 600;
 }
+
+.selected {
+  color: #65b366;
+  text-decoration: underline;
+  font-weight: 600;
+  border: none;
+  background-color: white;
+  font-size: 14px;
+}
 .menuButton:hover {
   color: #4ea64c;
   font-weight: 400;

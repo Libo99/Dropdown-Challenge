@@ -9,15 +9,17 @@ interface ButtonProps {
   value?: string;
   icon?: JSX.Element;
   tag?: boolean;
+  selected?: boolean;
 }
 
-const Button = (({ title, onClick, children, menuButton, value, tag }) => {
+const Button = (({ title, onClick, children, menuButton, value, tag, selected }) => {
   return (
     <div>
       <button
         value={value}
         onClick={onClick}
         className={
+          selected ? styles.selected :
           menuButton
             ? styles.menuButton
             : tag

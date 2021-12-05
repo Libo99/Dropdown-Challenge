@@ -45,11 +45,18 @@ const App = (() => {
 
   const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === 'Users') {
+      users.isSelected = true;
+      integrations.isSelected = false;
       setShowUsers(true);
       setShowIntegrations(false);
     } else if (e.target.value === 'Integrations') {
       setShowIntegrations(true);
       setShowUsers(false);
+      integrations.isSelected = true;
+      users.isSelected = false;
+    } else {
+      users.isSelected = true;
+      setShowUsers(true);
     }
   };
 
@@ -84,6 +91,8 @@ const App = (() => {
     setSelectedItem(next);
     localStorage.setItem('tag', JSON.stringify(next));
   };
+
+  
 
   const removeItem = (index: number) => {
     const items = [...selectedItem];
