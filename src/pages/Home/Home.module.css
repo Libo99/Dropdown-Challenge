@@ -38,10 +38,9 @@
 .searchBarContainer {
   position: relative;
 }
-
-
- @media only screen and (max-height: 720px) { 
-  .tagContainer{
+/* This is for when the screen is minimized */
+@media only screen and (max-height: 720px) {
+  .tagContainer {
     bottom: 2%;
   }
 }
