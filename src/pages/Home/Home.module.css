@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   flex-direction: column;
 }
@@ -11,13 +11,13 @@
 .buttonContainer {
   width: 340px;
   justify-content: flex-start;
-  margin-top: -200px;
+  margin-top: -250px;
 }
 
 /* Position Absolute to make sure the dropdown doesn't push the button up */
 .dropdownContainer {
   position: absolute;
-  top: 40%;
+  top: 33%;
 }
 
 /* Position absolute to make sure the tag container doesn't 
@@ -27,7 +27,7 @@
   flex-direction: row;
   position: absolute;
   width: 100%;
-  bottom: -20px;
+  bottom: 10%;
   height: 100px;
   justify-content: center;
   flex-wrap: wrap;

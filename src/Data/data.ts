@@ -9,7 +9,7 @@ export const integrations = {
         'https://www.activecampaign.com/site/assets/mark-blue-1627270023.svg',
       name: 'ActiveCampaign',
       isSelected: false,
-      type: 'Integrations',
+      type: 'Integration',
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export const integrations = {
         'https://play-lh.googleusercontent.com/Ac7UebUnwu5-zLt4gN1HlW5KgZhquPJbNhQk2chzdrMjoTPxKJQkxBL5FGAJgp3lCw',
       name: 'Google Analytics',
       isSelected: false,
-      type: 'Integrations',
+      type: 'Integration',
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export const integrations = {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png',
       name: 'Instagram',
       isSelected: false,
-      type: 'Integrations',
+      type: 'Integration',
     },
     {
       id: 4,
@@ -33,14 +33,14 @@ export const integrations = {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/WooCommerce_logo.svg/1200px-WooCommerce_logo.svg.png',
       name: 'Woocommerce',
       isSelected: false,
-      type: 'Integrations',
+      type: 'Integration',
     },
     {
       id: 5,
       image: 'https://nsales.dk/wp-content/uploads/2021/04/shopify-bag.png',
       name: 'Shopify',
       isSelected: false,
-      type: 'Integrations',
+      type: 'Integration',
     },
   ],
 };
