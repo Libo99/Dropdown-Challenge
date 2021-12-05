@@ -18,8 +18,8 @@ const Home = (() => {
   //This state responsible for the searchbar component
   const [search, setSearch] = useState<string>('');
   //These states will show a list of data that contains the characters of the search state
-  const [filterUser, setFilterUser] = useState<MenuItem[]>(users.item);
-  const [filterIntegration, setFilterIntegration] = useState<MenuItem[]>(
+  const [filteredUsers, setFilteredUsers] = useState<MenuItem[]>(users.item);
+  const [filteredIntegrations, setFilteredIntegrations] = useState<MenuItem[]>(
     integrations.item
   );
   //This state is the array that will hold the selected items
@@ -30,7 +30,7 @@ const Home = (() => {
     const result: any = users.item.filter((item) =>
       item.name.toLocaleLowerCase().includes(search)
     );
-    setFilterUser(result);
+    setFilteredUsers(result);
   }, [search]);
 
   // Search function for the integrations
@@ -38,7 +38,7 @@ const Home = (() => {
     const result: any = integrations.item.filter((item) =>
       item.name.toLocaleLowerCase().includes(search)
     );
-    setFilterIntegration(result);
+    setFilteredIntegrations(result);
   }, [search, showIntegrations]);
 
   //This useffect will get the items from the local storage if there
@@ -68,7 +68,7 @@ const Home = (() => {
 
   //Renders the user items
   const renderUser = () => {
-    return filterUser.map((item: MenuItem) => (
+    return filteredUsers.map((item: MenuItem) => (
       <Card
         item={item}
         selected={compareArray(item)}
@@ -80,7 +80,7 @@ const Home = (() => {
 
   //Renders the integration items
   const renderIntegration = () => {
-    return filterIntegration.map((item: MenuItem) => (
+    return filteredIntegrations.map((item: MenuItem) => (
       <Card
         item={item}
         onClick={() => {
