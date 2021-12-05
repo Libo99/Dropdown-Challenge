@@ -12,13 +12,17 @@ import Tag from '../../components/Tag/Tag';
 
 const Home = (() => {
   const [showMenu, setShowMenu] = useState(false);
+  // These states that is responsible for which data to show
   const [showIntegrations, setShowIntegrations] = useState(false);
   const [showUsers, setShowUsers] = useState(true);
+  //This state responsible for the searchbar component
   const [search, setSearch] = useState<string>('');
+  //These states will show a list of data that contains the characters of the search state
   const [filterUser, setFilterUser] = useState<MenuItem[]>(users.item);
   const [filterIntegration, setFilterIntegration] = useState<MenuItem[]>(
     integrations.item
   );
+  //This state is the array that will hold the selected items
   const [selectedItem, setSelectedItem] = useState<MenuItem[]>([]);
 
   // Search function for the users
@@ -37,12 +41,14 @@ const Home = (() => {
     setFilterIntegration(result);
   }, [search, showIntegrations]);
 
-  //this function toggles between which data to show
+  //This useffect will get the items from the local storage if there
+  //is any data
   useEffect(() => {
     const existingItems = localStorage.getItem('tag');
     setSelectedItem(existingItems ? JSON.parse(existingItems) : []);
   }, []);
 
+  //This function toggles between which data to show
   const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === 'Users') {
       users.isSelected = true;
@@ -60,17 +66,19 @@ const Home = (() => {
     }
   };
 
+  //Renders the user items
   const renderUser = () => {
     return filterUser.map((item: MenuItem) => (
       <Card
         item={item}
-        selected={item.isSelected}
+        selected={compareArray(item)}
         onClick={() => addItem(item)}
         key={item.id}
       />
     ));
   };
 
+  //Renders the integration items
   const renderIntegration = () => {
     return filterIntegration.map((item: MenuItem) => (
       <Card
@@ -78,12 +86,14 @@ const Home = (() => {
         onClick={() => {
           addItem(item);
         }}
-        selected={item.isSelected}
+        selected={compareArray(item)}
         key={item.id}
       />
     ));
   };
 
+  //Will save and add the items to the localstorage
+  //and the selectedItem state
   const addItem = (item: MenuItem) => {
     if (item.isSelected === true) return;
     item.isSelected = true;
@@ -92,11 +102,21 @@ const Home = (() => {
     localStorage.setItem('tag', JSON.stringify(next));
   };
 
+  //Will remove from localstorage and selected item state
   const removeItem = (index: number) => {
     const items = [...selectedItem];
     items.splice(index, 1);
     setSelectedItem(items);
     localStorage.setItem('tag', JSON.stringify(items));
+  };
+
+  //compares the selected item array and the filter arrays
+  const compareArray = (item: MenuItem) => {
+    if (selectedItem.some((item2) => item2.name === item.name)) {
+      return (item.isSelected = true);
+    } else {
+      item.isSelected = false;
+    }
   };
 
   return (
