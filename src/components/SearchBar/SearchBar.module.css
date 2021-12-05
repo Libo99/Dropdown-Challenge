@@ -18,7 +18,7 @@
   transition: 200ms ease-in;
 }
 .input::placeholder {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
   line-height: 16px;
   color: #9fb4b4;
