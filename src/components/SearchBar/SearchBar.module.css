@@ -25,10 +25,11 @@
 
 .input:focus {
   border: 1px solid #323a63;
+  outline: none;
 }
 
 .icon {
   position: absolute;
   top: 25%;
-  left: 10%;
+  left: 8.5%;
 }
