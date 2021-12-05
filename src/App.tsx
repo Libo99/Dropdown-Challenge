@@ -42,7 +42,7 @@ const App = (() => {
     const existingItems = localStorage.getItem('tag');
     setSelectedItem(existingItems ? JSON.parse(existingItems) : []);
   }, []);
-  
+
   const toggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === 'Users') {
       setShowUsers(true);
@@ -55,7 +55,12 @@ const App = (() => {
 
   const renderUser = () => {
     return filterUser.map((item: MenuItem) => (
-      <Card item={item} onClick={() => addItem(item)} key={item.id} />
+      <Card
+        item={item}
+        selected={item.isSelected}
+        onClick={() => addItem(item)}
+        key={item.id}
+      />
     ));
   };
 
@@ -66,12 +71,14 @@ const App = (() => {
         onClick={() => {
           addItem(item);
         }}
+        selected={item.isSelected}
         key={item.id}
       />
     ));
   };
 
   const addItem = (item: MenuItem) => {
+    if (item.isSelected === true) return;
     item.isSelected = true;
     const next = [...selectedItem, item];
     setSelectedItem(next);
