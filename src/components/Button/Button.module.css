@@ -21,18 +21,27 @@
 
 .menuButton:focus {
   color: #65b366;
-  text-decoration: underline;
   font-weight: 600;
 }
 
 .selected {
   color: #65b366;
-  text-decoration: underline;
   font-weight: 600;
   border: none;
   background-color: white;
   font-size: 14px;
+  position: relative;
 }
+.selected::after {
+  content: '';
+  width: 100%;
+  border: solid 1px green;
+  position: absolute;
+  top: 24.5px;
+  z-index: 1;
+  left: 0;
+}
+
 .menuButton:hover {
   color: #4ea64c;
   font-weight: 400;
