@@ -32,6 +32,7 @@ const App = (() => {
     }
   };
 
+  // Search function for the users
   useEffect(() => {
     const result: any = users.item.filter((item) =>
       item.name.toLocaleLowerCase().includes(search)
@@ -39,6 +40,7 @@ const App = (() => {
     setFilterUser(result);
   }, [search]);
 
+  // Search function for the integrations
   useEffect(() => {
     const result: any = integrations.item.filter((item) =>
       item.name.toLocaleLowerCase().includes(search)
@@ -111,6 +113,8 @@ const App = (() => {
           </Dropdown>
         )}
       </div>
+      {/* Put is here so the tags doesnt effect the dropdown
+      by pushing it to the left when the tags keeps getting added */}
       {showMenu && (
         <div className={styles.tagContainer}>
           {selectedItem.map((item, index) => (
