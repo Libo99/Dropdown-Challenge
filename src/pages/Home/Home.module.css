@@ -17,7 +17,7 @@
 /* Position Absolute to make sure the dropdown doesn't push the button up */
 .dropdownContainer {
   position: absolute;
-  top: 33%;
+  top: 35%;
 }
 
 /* Position absolute to make sure the tag container doesn't 
@@ -27,7 +27,7 @@
   flex-direction: row;
   position: absolute;
   width: 100%;
-  bottom: 10%;
+  bottom: 18%;
   height: 100px;
   justify-content: center;
   flex-wrap: wrap;
@@ -38,9 +38,22 @@
 .searchBarContainer {
   position: relative;
 }
-/* This is for when the screen is minimized */
-@media only screen and (max-height: 720px) {
+
+/* media queries for laptops  */
+@media only screen and (max-height: 850px) {
+  .tagContainer {
+    bottom: 9%;
+  }
+  .dropdownContainer {
+    top: 33%;
+  }
+}
+
+@media only screen and (max-height: 730px) {
   .tagContainer {
     bottom: 2%;
+  }
+  .dropdownContainer {
+    top: 32%;
   }
 }
