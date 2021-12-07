@@ -40,6 +40,12 @@
 }
 
 /* media queries for laptops  */
+
+@media only screen and (max-height: 900px) {
+  .tagContainer {
+    bottom: 13%;
+  }
+}
 @media only screen and (max-height: 850px) {
   .tagContainer {
     bottom: 9%;
